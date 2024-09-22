@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 240c9c79801f4a6aa213618543b0747b, type: 3}
+  m_Name: ExampleScriptable
+  m_EditorClassIdentifier: 
+  readOnlyInt: 141234
+  exampleLabelString: 
+  emptyLabelString: 
+  exampleFloat: 1234
+  exampleString: hello this is a string
+  exampleBool: 0
+  exampleIntFoldout: 0
+  exampleFloat1Foldout: 0
+  exampleIntFoldout1: 0
+  exampleFloat1Foldout1: 0
+  exampleIntFoldout2: 0
+  exampleFloat1Foldout2: 0

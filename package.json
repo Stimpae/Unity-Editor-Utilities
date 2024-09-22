@@ -1,8 +1,8 @@
 {
-  "name": "com.stimpae.tgutilities",
+  "name": "com.stimpae.editortoolkit",
   "version": "1.0.0",
-  "displayName": "TG Utilities",
-  "description": "",
+  "displayName": "TG Editor Toolkit",
+  "description": "A collection of tools for the unity editor.",
   "unity": "2022.1",
   "author": {
     "name": "Sam Stamp",

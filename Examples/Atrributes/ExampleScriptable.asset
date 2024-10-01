@@ -18,9 +18,3 @@ MonoBehaviour:
   exampleFloat: 1234
   exampleString: hello this is a string
   exampleBool: 0
-  exampleIntFoldout: 0
-  exampleFloat1Foldout: 0
-  exampleIntFoldout1: 0
-  exampleFloat1Foldout1: 0
-  exampleIntFoldout2: 0
-  exampleFloat1Foldout2: 0

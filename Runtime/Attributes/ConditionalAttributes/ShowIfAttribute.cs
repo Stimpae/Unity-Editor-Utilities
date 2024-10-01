@@ -10,7 +10,7 @@ namespace TG.Attributes {
             ConditionType = EConditionType.SHOW;
         }
 
-        public ShowIfAttribute(string enumName, Enum enumValue) : base(enumName, enumValue) {
+        public ShowIfAttribute(string enumName, object enumValue) : base(enumName, enumValue as Enum) {
             ConditionType = EConditionType.SHOW;
         }
     }

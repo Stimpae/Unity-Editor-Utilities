@@ -21,6 +21,15 @@ namespace TG.Attributes.Editor {
 
             var propertyType = PropertyUtility.GetPropertyType(property);
             if (typeof(ScriptableObject).IsAssignableFrom(propertyType)) {
+                var serializedObject = new SerializedObject(property.objectReferenceValue);
+                var list = PropertyUtility.GetSerializedProperties(serializedObject);
+                if (list.Count == 1) {
+                    EditorGUI.PropertyField(position, property, label);
+                    return;
+                }
+                
+                Debug.Log($"ScriptableObjectDrawer: {propertyType} has {list.Count} properties");
+                
                 Rect fieldRect = new Rect(position.x, position.y, position.width - 70,
                     EditorGUIUtility.singleLineHeight);
                 Rect buttonRect = new Rect(position.x + position.width - 65, position.y, 65,
@@ -32,50 +41,12 @@ namespace TG.Attributes.Editor {
                 }
 
                 if (!m_expanded) return;
-                var boxRect = new Rect() {
-                    x = 0,
-                    y = position.y + EditorGUIUtility.singleLineHeight,
-                    width = (position.width * 2),
-                    height = (position.height) + GetInspectorHeight(property)
-                };
-
-                EditorGUI.DrawRect(boxRect, new Color(0.18f, 0.18f, 0.18f, 1.0f));
                 DrawScriptableInspector(property);
             }
             else {
                 Debug.LogWarning($"ScriptableObjectDrawer: {propertyType} is not a ScriptableObject");
             }
             EditorGUI.EndProperty();
-        }
-
-        private float GetInspectorHeight(SerializedProperty property) {
-            float height = 0;
-            
-            var foldoutList = new List<string>();
-            var serializedObject = new SerializedObject(property.objectReferenceValue);
-            var list = PropertyUtility.GetSerializedProperties(serializedObject);
-            foreach (var prop in list) {
-                if (prop.name == "m_Script") continue;
-                var foldoutGroupAttribute = AttributeUtility.GetAttribute<FoldoutGroupAttribute>(prop);
-                if (foldoutGroupAttribute != null) {
-                    var foldoutGroupName = foldoutGroupAttribute.GroupName;
-                    if (foldoutList.Contains(foldoutGroupName)) continue;
-                    foldoutList.Add(foldoutGroupName);
-                    height += EditorGUI.GetPropertyHeight(prop, true) + 5f;
-                    if (m_editor == null || m_editor is not TGAttributesEditor editor) continue;
-                    if (editor == null || !editor.FoldoutStates.ContainsKey(foldoutGroupName) || !editor.FoldoutStates[foldoutGroupName].Value) continue;
-                    var foldoutGroupProperties = list.Where(p =>
-                        AttributeUtility.GetAttribute<FoldoutGroupAttribute>(p) != null &&
-                        AttributeUtility.GetAttribute<FoldoutGroupAttribute>(p).GroupName ==
-                        foldoutGroupName);
-
-                    height += foldoutGroupProperties.Sum(props => EditorGUI.GetPropertyHeight(props, true) + 10f);
-                }
-                else {
-                    height += EditorGUI.GetPropertyHeight(prop, true);
-                }
-            }
-            return height + 7.5f;
         }
         
         private void DrawScriptableInspector(SerializedProperty property) {

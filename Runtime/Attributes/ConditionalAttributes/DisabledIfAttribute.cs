@@ -12,7 +12,7 @@ namespace TG.Attributes {
             InvertResult = true;
         }
 
-        public DisabledIfAttribute(string enumName, Enum enumValue) : base(enumName, enumValue) {
+        public DisabledIfAttribute(string enumName, object enumValue) : base(enumName, enumValue as Enum) {
             ConditionType = EConditionType.ENABLED;
             InvertResult = true;
         }

@@ -10,7 +10,7 @@ namespace TG.Attributes {
             ConditionType = EConditionType.ENABLED;
         }
 
-        public EnabledIfAttribute(string enumName, Enum enumValue) : base(enumName, enumValue) {
+        public EnabledIfAttribute(string enumName, object enumValue) : base(enumName, enumValue as Enum) {
             ConditionType = EConditionType.ENABLED;
         }
     }

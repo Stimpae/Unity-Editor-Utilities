@@ -12,7 +12,7 @@ namespace TG.Attributes {
             InvertResult = true;
         }
 
-        public HideIfAttribute(string enumName, Enum enumValue) : base(enumName, enumValue) {
+        public HideIfAttribute(string enumName, object enumValue) : base(enumName, enumValue as Enum) {
             ConditionType = EConditionType.SHOW;
             InvertResult = true;
         }

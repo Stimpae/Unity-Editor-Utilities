@@ -42,7 +42,7 @@ namespace TG.Attributes.Editor {
         }
 
         private ReorderableList CreateReorderableList(SerializedProperty property) {
-            var reorderableList = new ReorderableList(serializedObject, property, true, false, true, true);
+            var reorderableList = new ReorderableList(serializedObject, property, true, true, true, true);
             reorderableList.drawElementCallback = (rect, index, isActive, isFocused) => DrawElement(reorderableList, rect, index);
             reorderableList.drawHeaderCallback = rect => EditorGUI.LabelField(rect, property.displayName);
             return reorderableList;
@@ -192,35 +192,8 @@ namespace TG.Attributes.Editor {
             if (!listProperty.isArray) {
                 Debug.LogWarning("Property is not an array"); return;
             }
-            
-            if (!m_foldoutStates.ContainsKey(listProperty.displayName)) {
-                m_foldoutStates[listProperty.displayName] = new EditorBool($"{target.GetInstanceID()}.{listProperty.displayName}", false);
-            }
-
             var reorderableList = m_reorderableLists[listProperty];
-            
-            EditorGUILayout.BeginVertical(AttributeEditorStyles.ContainerStyle(new RectOffset(15, 7, -2,0 ),true));
-            Rect verticalGroup = EditorGUILayout.BeginVertical();
-            
-            AttributeEditorStyles.DrawIdentifierLine(verticalGroup, Color.green);
-            EditorGUILayout.BeginHorizontal();
-            m_foldoutStates[listProperty.displayName].Value = EditorGUILayout.Foldout(m_foldoutStates[listProperty.displayName].Value, listProperty.displayName, AttributeEditorStyles.FoldoutStyle(true, 12));
-            GUILayout.FlexibleSpace();
-            // size label thats text layout is right aligned
-            var sizeLabel = new GUIContent($"Size: {listProperty.arraySize}");
-            var sizeLabelStyle = new GUIStyle(EditorStyles.label) {
-                alignment = TextAnchor.MiddleRight,
-                fontStyle = FontStyle.Bold,
-                fontSize = 10
-            };
-            EditorGUILayout.LabelField(sizeLabel, sizeLabelStyle);
-            EditorGUILayout.EndHorizontal();
-            if(m_foldoutStates[listProperty.displayName].Value) {
-                reorderableList?.DoLayoutList();
-            }
-            
-            EditorGUILayout.EndVertical();
-            EditorGUILayout.EndVertical();
+            reorderableList?.DoLayoutList();
         }
     }
 }

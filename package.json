@@ -1,6 +1,6 @@
 {
   "name": "com.stimpae.editortoolkit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "TG Editor Toolkit",
   "description": "A collection of tools for the unity editor.",
   "unity": "2022.1",

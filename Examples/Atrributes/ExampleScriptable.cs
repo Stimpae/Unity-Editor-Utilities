@@ -14,10 +14,10 @@ namespace TG.Attributes.Examples {
         public bool exampleBool;
         
         [Title("Example Title", "Example Description", showLine: true, bold: true)]
-        [Holder] public DecoratorHolder decoratorHolder1;
+        [Holder] private DecoratorHolder decoratorHolder1;
         
         [ButtonField("ExampleMethod", "Example Button Field", 30)]
-        [Holder] public DecoratorHolder decoratorHolder3;
+        [Holder] private DecoratorHolder decoratorHolder3;
         
         public void ExampleMethod() {
             Debug.Log("Example Method Called");

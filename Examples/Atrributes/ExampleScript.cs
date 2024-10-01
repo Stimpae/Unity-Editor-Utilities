@@ -23,10 +23,10 @@ namespace TG.Attributes.Examples {
         public string exampleString;
         public bool exampleBool;
         
-        [BoxGroup("Example Box Group", 2)] public string exampleString4;
-        [BoxGroup("Example Box Group")] public bool exampleBool5;
-        [BoxGroup("Example Box Group"), EnabledIf("exampleBool5")] public float exampleEnableIf;
-        [BoxGroup("Example Box Group"), ShowIf("exampleBool5")] public int exampleShowIf;
+        [BoxGroup("Example Box Group", 2)] [SerializeField] private string exampleString4;
+        [BoxGroup("Example Box Group")] [SerializeField] private bool exampleBool5;
+        [BoxGroup("Example Box Group"), EnabledIf("exampleBool5")] [SerializeField] private float exampleEnableIf;
+        [BoxGroup("Example Box Group"), ShowIf("exampleBool5")] [SerializeField] private int exampleShowIf;
         
         //[Struct] public ExampleStruct exampleStruct;
         [ScriptableObject] public ExampleScriptable exampleScriptable;

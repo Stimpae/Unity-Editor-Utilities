@@ -1,12 +1,12 @@
 {
-  "name": "com.stimpae.editortoolkit",
+  "name": "com.stimpae.editor-utilities",
   "version": "1.0.1",
-  "displayName": "TG Editor Toolkit",
-  "description": "A collection of tools for the unity editor.",
+  "displayName": "Unity Editor Utilities",
+  "description": "A collection of utilities and tools for the unity editor.",
   "unity": "2022.1",
   "author": {
-    "name": "Sam Stamp",
-    "email": "samstamp@thundertalegames.uk",
+    "name": "Stimpae",
+    "email": "",
     "url": "samstamp.co.uk"
   }
 }

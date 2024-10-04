@@ -1,10 +1,8 @@
 {
-    "name": "TG.EditorToolkit.Editor",
-    "rootNamespace": "TG",
-    "references": ["GUID:10bb741dc5a74aec8b5644a96970c79d"],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "name": "EditorUtilities",
+    "rootNamespace": "EditorUtilities",
+    "references": [],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

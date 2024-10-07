@@ -15,7 +15,7 @@ using static UnityEditor.AssetDatabase;
 
 namespace TG.Utilities {
     public static class ProjectSetup {
-        [MenuItem("Tools/Setup/Import Essential Assets")]
+        /*[MenuItem("Tools/Setup/Import Essential Assets")]
         public static void ImportEssentials() {
             Assets.ImportAsset("Hot Reload Edit Code Without Compiling.unitypackage", "The Naughty Cult/Editor ExtensionsUtilities");
             Assets.ImportAsset("Easy Save - The Complete Save Data Serializer System.unitypackage", "Moodkie/Editor ExtensionsUtilities");
@@ -147,6 +147,6 @@ namespace TG.Utilities {
                     DeleteAsset(pathToDelete);
                 }
             }
-        }
+        }*/
     }
 }

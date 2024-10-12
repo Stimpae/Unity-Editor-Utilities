@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 
-namespace TG.Attributes {
+namespace EditorUtilities.Attributes {
     public class RequiredAttribute : ValidateAttributeBase {
         public bool RegisterValidation { get; private set; }
         public RequiredAttribute(string errorMessage = null, bool registerValidation = false) {

@@ -1,9 +1,8 @@
 using System;
-using TG.Attributes;
 using UnityEditor;
 using UnityEngine;
 
-namespace TG.Attributes.Editor {
+namespace EditorUtilities.Attributes.Editor {
     [CustomPropertyDrawer(typeof(TitleAttribute))]
     public class TitleDrawer : DecoratorDrawer {
     public override void OnGUI(Rect position) {

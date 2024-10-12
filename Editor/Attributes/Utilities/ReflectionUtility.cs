@@ -3,7 +3,7 @@ using System.Collections;
 using System.Linq;
 using System.Reflection;
 
-namespace TG.Attributes.Editor {
+namespace EditorUtilities.Attributes.Editor {
     public static class ReflectionUtility {
         public static object GetValue(object source, string name, int index = -1) {
             if (source == null) return null;

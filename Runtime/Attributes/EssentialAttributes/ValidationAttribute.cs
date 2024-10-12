@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEditor;
 
-namespace TG.Attributes{
+namespace EditorUtilities.Attributes{
     public class ValidationAttribute : ValidateAttributeBase{
         public string ValidationCallback { get; private set; }
         public bool RegisterValidation { get; private set; }

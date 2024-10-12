@@ -8,17 +8,17 @@ using UnityEditorInternal;
 using UnityEngine;
 using Object = System.Object;
 
-namespace TG.Attributes.Editor {
-    // ReSharper disable once InconsistentNaming
+namespace EditorUtilities.Attributes.Editor {
+    
     [CustomEditor(typeof(Object), true)]
-    public class TGAttributesEditor : UnityEditor.Editor {
+    public class AttributeEditor : UnityEditor.Editor {
         private List<SerializedProperty> m_serializedProperties = new List<SerializedProperty>();
         private readonly Dictionary<SerializedProperty, ReorderableList> m_reorderableLists = new Dictionary<SerializedProperty, ReorderableList>();
         private readonly List<SerializedProperty> m_resolvedProperties = new List<SerializedProperty>();
         private IEnumerable<MethodInfo> m_buttonMethods;
-        private readonly Dictionary<string, EditorBool> m_foldoutStates = new Dictionary<string, EditorBool>();
+        private readonly Dictionary<string, EditorSavedBool> m_foldoutStates = new Dictionary<string, EditorSavedBool>();
         
-        public Dictionary<string, EditorBool> FoldoutStates => m_foldoutStates;
+        public Dictionary<string, EditorSavedBool> FoldoutStates => m_foldoutStates;
 
         protected virtual void OnEnable() {
             ValidationUtility.ClearFailedValidations();
@@ -72,7 +72,6 @@ namespace TG.Attributes.Editor {
                 if (property.name == "m_Script") continue;
                 if (m_resolvedProperties.Contains(property)) continue;
                 
-                // Check for meta attributes
                 var hasAttribute = HandleMetaAttributeChecks(property);
                 if (hasAttribute) continue;
                 
@@ -158,7 +157,7 @@ namespace TG.Attributes.Editor {
 
         protected virtual void DrawFoldoutGroup(string groupName) {
             if (!m_foldoutStates.ContainsKey(groupName)) {
-                m_foldoutStates[groupName] = new EditorBool($"{target.GetInstanceID()}.{groupName}", false);
+                m_foldoutStates[groupName] = new EditorSavedBool($"{target.GetInstanceID()}.{groupName}", false);
             }
 
             EditorGUILayout.BeginVertical(AttributeEditorStyles.ContainerStyle(new RectOffset(15, 7, 0, 0)));

@@ -5,7 +5,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace TG.Attributes.Editor {
+namespace EditorUtilities.Attributes.Editor {
     public static class AttributeUtility {
         public static T[] GetAttributes<T>(SerializedProperty property) where T : class {
             var fieldInfo = ReflectionUtility.GetField(GetTargetObject(property), property.name);

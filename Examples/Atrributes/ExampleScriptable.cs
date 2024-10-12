@@ -1,7 +1,6 @@
-﻿using TG.Attributes;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace TG.Attributes.Examples {
+namespace EditorUtilities.Attributes {
     [CreateAssetMenu(fileName = "ExampleScriptable", menuName = "TG/Examples/ExampleAttributeScriptable")]
     public class ExampleScriptable : ScriptableObject {
         [ReadOnly] public int readOnlyInt = 141234;

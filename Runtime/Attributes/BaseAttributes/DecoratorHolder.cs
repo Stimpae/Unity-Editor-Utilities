@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
 
-namespace TG.Attributes {
+namespace EditorUtilities.Attributes {
     [Serializable]
     public struct DecoratorHolder { }
 }

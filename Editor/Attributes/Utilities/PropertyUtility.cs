@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEditor;
 
-namespace TG.Attributes.Editor {
+namespace EditorUtilities.Attributes.Editor {
     public static class PropertyUtility {
         public static List<SerializedProperty> GetSerializedProperties(SerializedObject target) {
             var properties = new List<SerializedProperty>();

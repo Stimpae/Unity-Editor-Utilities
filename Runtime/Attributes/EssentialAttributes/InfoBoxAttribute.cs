@@ -3,7 +3,7 @@ using System.Diagnostics;
 using UnityEditor;
 using UnityEngine;
 
-namespace TG.Attributes {
+namespace EditorUtilities.Attributes {
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
     [Conditional("UNITY_EDITOR")]
     public class InfoBoxAttribute : PropertyAttribute {

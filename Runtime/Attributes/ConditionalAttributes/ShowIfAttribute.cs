@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TG.Attributes {
+namespace EditorUtilities.Attributes {
     public class ShowIfAttribute : ConditionAttributeBase {
         public ShowIfAttribute(string condition) : base(condition) {
             ConditionType = EConditionType.SHOW;

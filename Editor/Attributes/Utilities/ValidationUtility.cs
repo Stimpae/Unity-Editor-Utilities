@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace TG.Attributes.Editor {
+namespace EditorUtilities.Attributes.Editor {
     public static class ValidationUtility {
         private static Dictionary<string, SerializedProperty> _failedValidations = new Dictionary<string, SerializedProperty>();
 

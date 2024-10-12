@@ -4,7 +4,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace TG.Attributes.Editor {
+namespace EditorUtilities.Attributes.Editor {
     [CustomPropertyDrawer(typeof(ScriptableObjectAttribute))]
     public class ScriptableObjectDrawer : PropertyDrawer {
         private bool m_expanded;
@@ -27,8 +27,6 @@ namespace TG.Attributes.Editor {
                     EditorGUI.PropertyField(position, property, label);
                     return;
                 }
-                
-                Debug.Log($"ScriptableObjectDrawer: {propertyType} has {list.Count} properties");
                 
                 Rect fieldRect = new Rect(position.x, position.y, position.width - 70,
                     EditorGUIUtility.singleLineHeight);

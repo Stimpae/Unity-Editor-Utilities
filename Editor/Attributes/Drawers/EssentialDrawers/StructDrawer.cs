@@ -1,4 +1,4 @@
-﻿namespace TG.Attributes.Editor {
+﻿namespace EditorUtilities.Attributes.Editor {
     public class ExpandableDrawer {
         
     }

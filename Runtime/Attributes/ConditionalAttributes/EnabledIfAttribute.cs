@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TG.Attributes {
+namespace EditorUtilities.Attributes {
     public class EnabledIfAttribute : ConditionAttributeBase {
         public EnabledIfAttribute(string condition) : base(condition) {
             ConditionType = EConditionType.ENABLED;

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace TG.Attributes.Editor {
+namespace EditorUtilities.Attributes.Editor {
     public static class AttributesGUI {
         public static void PropertyField(SerializedProperty property, bool includeChildren = true,
             bool drawContainer = false) {

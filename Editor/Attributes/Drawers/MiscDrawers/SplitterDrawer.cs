@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace TG.Attributes.Editor {
+namespace EditorUtilities.Attributes.Editor {
     [CustomPropertyDrawer(typeof(SplitterAttribute))]
     public class SplitterDrawer : DecoratorDrawer {
         public override void OnGUI(Rect position) {

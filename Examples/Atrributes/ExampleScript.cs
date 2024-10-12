@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using TG.Attributes;
 using UnityEngine;
 
-namespace TG.Attributes.Examples {
+namespace EditorUtilities.Attributes {
     [Serializable]
     public struct ExampleStruct {
         [ReadOnly] public string exampleString;

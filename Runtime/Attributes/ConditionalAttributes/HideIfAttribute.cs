@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TG.Attributes {
+namespace EditorUtilities.Attributes {
     public class HideIfAttribute : ConditionAttributeBase {
         public HideIfAttribute(string condition) : base(condition) {
             ConditionType = EConditionType.SHOW;

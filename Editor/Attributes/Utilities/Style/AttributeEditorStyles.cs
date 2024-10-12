@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace TG.Attributes.Editor {
+namespace EditorUtilities.Attributes.Editor {
     public static class AttributeEditorStyles {
         private static Texture2D _savedHelpBoxBackground;
         static AttributeEditorStyles() {

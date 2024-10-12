@@ -1,4 +1,4 @@
-﻿namespace TG.Attributes {
+﻿namespace EditorUtilities.Attributes {
     public class TabGroupAttribute {
         
     }

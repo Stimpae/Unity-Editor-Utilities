@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace TG.Attributes.Editor {
+namespace EditorUtilities.Attributes.Editor {
     [CustomPropertyDrawer(typeof(InfoBoxAttribute))]
     public class InfoBoxDrawer : DecoratorDrawer {
         public override void OnGUI(Rect position) {

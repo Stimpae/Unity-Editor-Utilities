@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TG.Attributes {
+namespace EditorUtilities.Attributes {
     public enum TitleAlignment {
         LEFT,
         CENTER,
